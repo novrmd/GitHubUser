@@ -10,37 +10,37 @@ import retrofit2.http.Query
 
 interface Api {
     @GET("search/users")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token API_KEY")
     fun getSearchUsers(
         @Query("q") query: String
     ): Call<userResponse>
 
     @GET("users/{username}")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token API_KEY")
     fun getUserDetail(
         @retrofit2.http.Path("username") username: String
     ): Call<detailResponse>
 
     @GET("users/{username}/followers")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token API_KEY")
     fun getFollowers(
         @retrofit2.http.Path("username") username: String
     ): Call<ArrayList<User>>
 
     @GET("users/{username}/following")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token API_KEY")
     fun getFollowing(
         @retrofit2.http.Path("username") username: String
     ): Call<ArrayList<User>>
 
     @GET("users/{username}/public_repos")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token API_KEY")
     fun getRepository(
         @retrofit2.http.Path("username") username: String
     ): Call<detailResponse>
 
     @GET("users/{username}/html_url")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token API_KEY")
     fun getProfile(
         @retrofit2.http.Path("username") username: String
     ): Call<detailResponse>
